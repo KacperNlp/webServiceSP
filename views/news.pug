@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Witaj na #{title}
+  h1=title
+  form(method="get")
+    input(type="text" name="search" value=search)
+    input(type="submit" name="btn" value="Szukaj")
+
+  if data.length > 0
+   div(class="articles-container")
+     each article in data
+        article(class="article")
+           h3(class="article-title")=article.title
+           p(class="article-date")=article.date
+           p(class="article-content")=article.desc
+          
+  else
+   p W danej chwili nie ma tutaj żadnych wpisów!
