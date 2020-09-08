@@ -2,4 +2,15 @@ extends ../layout
 
 block content
     h1= title
-    p Witaj na stronie dla admina
+    if data.length > 0
+      div(class="article-container")
+        each article, index in data
+          div(class="article")
+            h2=article.title
+            p=article.date
+            p=article.desc
+            a(class="delete-btn" href=`/admin/article/delete/${article._id}`) Usuń
+    else
+      p Nie masz aktualnie żadnych wpisów na swojej stronie internetowej
+
+    a(href="/admin/article/add") Dodaj artykuł

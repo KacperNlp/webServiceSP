@@ -1,11 +1,16 @@
 extends ../layout
 
 block content
-    form(method="post")
+  h1= title
+
+  if errors.errors !== undefined
+     each message in errors.errors
+       p= message
+  
+  form(method="post")
        div(class="form-box")
-          label
-             input(type="text" name="article-title")
+          input(type="text" name="title" placeholder="tytuł" value=body.title || "")
        div(class="form-box")
-          textarea(type="article-desc")
+          textarea(type="article-desc" name="desc" placeholder="tekst")=body.desc || ""
        div(class="form-box")
-          button(class="form-btn") Zapisz
+          button(class="form-btn" type="submit") Zapisz

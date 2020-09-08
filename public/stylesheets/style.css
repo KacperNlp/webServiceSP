@@ -13,3 +13,10 @@ ul {
 a.active {
   color: darkblue;
 }
+
+/*article*/
+.article {
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+}
