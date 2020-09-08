@@ -20,3 +20,6 @@ a.active {
   height: 200px;
   padding: 10px;
 }
+.season-label {
+  display: block;
+}
